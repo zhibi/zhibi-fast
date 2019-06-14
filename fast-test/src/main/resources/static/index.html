@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+index
+<form action="/upload" method="post" enctype="multipart/form-data">
+
+  <input type="file" name="file">
+  <input type="submit">
+</form>
+
+<script id="container" name="content" type="text/plain"></script>
+</body>
+<script type="text/javascript" src="/webjars/ueditor-bower/1.4.3/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/webjars/ueditor-bower/1.4.3/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container', {
+        autoHeightEnabled: true,
+        // 服务器统一请求接口路径
+        serverUrl: "http://localhost:80/ueditor/server"
+    });
+
+</script>
+</html>

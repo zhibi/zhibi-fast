@@ -1,0 +1,41 @@
+{
+  "groups": [
+    {
+      "sourceType": "zhibi.fast.spring.boot.properties.UploadProperties",
+      "name": "fast.upload",
+      "type": "zhibi.fast.spring.boot.properties.UploadProperties"
+    },
+    {
+      "sourceType": "zhibi.fast.spring.boot.properties.UidProperties",
+      "name": "fast.uid",
+      "type": "zhibi.fast.spring.boot.properties.UidProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "zhibi.fast.spring.boot.properties.UploadProperties",
+      "name": "fast.upload.path",
+      "type": "java.lang.String",
+      "remark": "文件上传路径"
+    },
+    {
+      "sourceType": "zhibi.fast.spring.boot.properties.UploadProperties",
+      "name": "fast.upload.prefix",
+      "type": "java.lang.String",
+      "default": "",
+      "remark": "文件上传前缀"
+    },
+    {
+      "sourceType": "zhibi.fast.spring.boot.properties.UidProperties",
+      "name": "fast.uid.sequence",
+      "type": "java.lang.Integer",
+      "remark": "序列"
+    },
+    {
+      "sourceType": "zhibi.fast.spring.boot.properties.UidProperties",
+      "name": "fast.uid.workerId",
+      "type": "java.lang.Integer",
+      "remark": "机器ID"
+    }
+  ]
+}

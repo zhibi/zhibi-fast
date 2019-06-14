@@ -1,0 +1,12 @@
+
+${AnsiColor.BLUE}:::::::::  ${AnsiColor.GREEN} :::    ::: ${AnsiColor.BLUE} ::::::::::: ${AnsiColor.GREEN}  :::::::::  ${AnsiColor.BLUE} :::::::::::
+${AnsiColor.BLUE}     :+:   ${AnsiColor.GREEN} :+:    :+: ${AnsiColor.BLUE}     :+:     ${AnsiColor.GREEN}  :+:    :+: ${AnsiColor.BLUE}     :+:
+${AnsiColor.BLUE}    +:+    ${AnsiColor.GREEN} +:+    +:+ ${AnsiColor.BLUE}     +:+     ${AnsiColor.GREEN}  +:+    +:+ ${AnsiColor.BLUE}     +:+
+${AnsiColor.BLUE}   +#+     ${AnsiColor.GREEN} +#++:++#++ ${AnsiColor.BLUE}     +#+     ${AnsiColor.GREEN}  +#++:++#+  ${AnsiColor.BLUE}     +#+
+${AnsiColor.BLUE}  +#+      ${AnsiColor.GREEN} +#+    +#+ ${AnsiColor.BLUE}     +#+     ${AnsiColor.GREEN}  +#+    +#+ ${AnsiColor.BLUE}     +#+
+${AnsiColor.BLUE} #+#       ${AnsiColor.GREEN} #+#    #+# ${AnsiColor.BLUE}     #+#     ${AnsiColor.GREEN}  #+#    #+# ${AnsiColor.BLUE}     #+#
+${AnsiColor.BLUE}#########  ${AnsiColor.GREEN} ###    ### ${AnsiColor.BLUE} ########### ${AnsiColor.GREEN}  #########  ${AnsiColor.BLUE} ###########
+${AnsiColor.BRIGHT_YELLOW}
+  :: Spring Boot :: ${spring-boot.formatted-version}
+  :: Author Link ::  执笔[https://www.yuque.com/.zhibi]
+${AnsiColor.BLACK}

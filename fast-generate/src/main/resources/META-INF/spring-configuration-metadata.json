@@ -1,0 +1,223 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "zhibi.fast.generate.springboot.GeneratorProperties",
+      "name": "fast.generate",
+      "type": "zhibi.fast.generate.springboot.GeneratorProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "zhibi.fast.generate.springboot.GeneratorProperties",
+      "name": "fast.generate.global",
+      "type": "zhibi.fast.generate.config.GlobalConfig"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.outputDir",
+      "type": "java.lang.String",
+      "defaultValue": "D://"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.fileOverride",
+      "type": "java.lang.Boolean",
+      "defaultValue": true
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.open",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.generatorFile",
+      "type": "java.lang.Boolean",
+      "defaultValue": true
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.enable",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.author",
+      "type": "java.lang.String",
+      "defaultValue": "执笔"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.mapperName",
+      "type": "java.lang.String",
+      "defaultValue": "%sMapper"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.xmlName",
+      "type": "java.lang.String",
+      "defaultValue": "%sMapper"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.serviceName",
+      "type": "java.lang.String",
+      "defaultValue": "%sService"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.serviceImplName",
+      "type": "java.lang.String",
+      "defaultValue": "%sServiceImpl"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.GlobalConfig",
+      "name": "fast.generate.global.controllerName",
+      "type": "java.lang.String",
+      "defaultValue": "%sController"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.springboot.GeneratorProperties",
+      "name": "fast.generate.template",
+      "type": "zhibi.fast.generate.config.TemplateConfig"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.TemplateConfig",
+      "name": "fast.generate.template.entity",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.TemplateConfig",
+      "name": "fast.generate.template.service",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.TemplateConfig",
+      "name": "fast.generate.template.serviceImpl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.TemplateConfig",
+      "name": "fast.generate.template.mapper",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.TemplateConfig",
+      "name": "fast.generate.template.xml",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.TemplateConfig",
+      "name": "fast.generate.template.controller",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.springboot.GeneratorProperties",
+      "name": "fast.generate.package",
+      "type": "zhibi.fast.generate.config.PackageConfig"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.parent",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.domain",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.service",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.serviceImpl",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.mapper",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.xml",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.controller",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.PackageConfig",
+      "name": "fast.generate.package.otherDomain",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.springboot.GeneratorProperties",
+      "name": "fast.generate.dataSource",
+      "type": "zhibi.fast.generate.config.DataSourceConfig"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.DataSourceConfig",
+      "name": "fast.generate.dataSource.delOverColumn",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.springboot.GeneratorProperties",
+      "name": "fast.generate.strategy",
+      "type": "zhibi.zhibi.fast.generate.config.StrategyConfig"
+    },
+    {
+      "sourceType": "zhibi.zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.naming",
+      "type": "zhibi.fast.generate.enums.NamingStrategy"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.columnNaming",
+      "type": "zhibi.fast.generate.enums.NamingStrategy"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.sync",
+      "type": "zhibi.fast.generate.enums.SyncStrategy"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.superEntityClass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.superMapperClass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.superServiceClass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.superServiceImplClass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.superControllerClass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "zhibi.fast.generate.config.StrategyConfig",
+      "name": "fast.generate.strategy.tablePrefix",
+      "type": "java.lang.String"
+    }
+  ]
+}

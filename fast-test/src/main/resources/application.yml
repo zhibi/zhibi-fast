@@ -1,0 +1,6 @@
+fast:
+  upload:
+    path: F:\\Temp\\
+spring:
+  resources:
+    static-locations: ["file:${fast.upload.path}","classpath:/static/"]
