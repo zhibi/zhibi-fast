@@ -59,9 +59,11 @@ public class OperationLogAspect {
         if (operation.needLog()) {
             StringBuffer paramBuffer = getParamLog(joinPoint, method, operation);
             LogMdcUtils.putNotExist(LOG_ID, RandomStringUtils.randomAlphanumeric(9));
+            System.out.println();
             log.info("☆{}☆ 参数：{}  方法：{}.{}", operation.value(), paramBuffer, className, methodName);
             Object proceed = joinPoint.proceed();
             log.info("☆{}☆ 返回：{}", operation.value(), JSONUtils.toJson(proceed));
+            System.out.println();
             LogMdcUtils.removeExist(LOG_ID);
             return proceed;
         } else {
