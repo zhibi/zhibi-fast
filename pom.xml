@@ -12,7 +12,6 @@
         <module>fast-commons</module>
         <module>fast-mybatis</module>
         <module>fast-spring-boot</module>
-        <module>fast-test</module>
         <module>fast-poi</module>
         <module>fast-generate</module>
         <module>fast-ueditor</module>
