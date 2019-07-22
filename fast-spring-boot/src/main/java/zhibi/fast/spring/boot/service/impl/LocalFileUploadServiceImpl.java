@@ -3,6 +3,7 @@ package zhibi.fast.spring.boot.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
@@ -12,7 +13,10 @@ import org.springframework.web.multipart.MultipartFile;
 import zhibi.fast.spring.boot.properties.UploadProperties;
 import zhibi.fast.spring.boot.service.FileUploadService;
 
+import javax.validation.constraints.NotBlank;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 
@@ -40,6 +44,24 @@ public class LocalFileUploadServiceImpl implements FileUploadService {
         try {
             newFile.createNewFile();
             file.transferTo(newFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        log.info("◎Upload File◎  " + newFile.getAbsolutePath());
+        return prefix + path + fileName;
+    }
+
+    @Override
+    public String upload(File file, @NotBlank String model) {
+        String uploadPath = uploadProperties.getPath();
+        String prefix     = uploadProperties.getPrefix();
+        String path       = "/" + model + "/" + DateFormatUtils.format(new Date(), "yyyy-MM-dd") + "/";
+        String fileName   = generateNewName(file.getName());
+        File   newFile    = new File(uploadPath + path + fileName);
+        newFile.getParentFile().mkdirs();
+        try {
+            newFile.createNewFile();
+            IOUtils.copy(new FileInputStream(file), new FileOutputStream(newFile));
         } catch (IOException e) {
             e.printStackTrace();
         }
