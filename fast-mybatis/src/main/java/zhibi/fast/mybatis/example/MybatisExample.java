@@ -1,6 +1,7 @@
 package zhibi.fast.mybatis.example;
 
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import zhibi.fast.mybatis.dto.BasePage;
 
 import java.util.ArrayList;
@@ -195,7 +196,7 @@ public class MybatisExample extends BasePage {
      * @return
      */
     public MybatisExample like(String column, String value) {
-        if (value == null) {
+        if (StringUtils.isBlank(value)) {
             return this;
         }
         criteria.addCriterion(column + " LIKE '%" + value + "%'");

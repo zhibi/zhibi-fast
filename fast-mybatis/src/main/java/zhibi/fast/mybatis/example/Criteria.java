@@ -37,7 +37,7 @@ public class Criteria {
     }
 
     void addCriterion(String condition, Object value) {
-        if (value == null) {
+        if (value == null || StringUtils.isBlank(value.toString())) {
             return;
         }
         criteria.add(new Criterion(condition, value));
