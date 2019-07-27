@@ -37,6 +37,7 @@ public class MysqlBackup {
                 .append(databaseName);
         try {
             //调用外部执行exe文件的javaAPI
+            log.info("【执行命令】 {} ", stringBuilder.toString());
             Process process = Runtime.getRuntime().exec(stringBuilder.toString());
             // 0 表示线程正常终止。
             if (process.waitFor() == 0) {
