@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.*;
 import zhibi.fast.commons.base.Constants;
 import zhibi.fast.mybatis.dto.BaseDomain;
@@ -34,17 +35,21 @@ public class UpdateOperationInterceptor implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
-        Long            userId          = getLoginUserId();
-        // 获取参数
-        Object parameter = invocation.getArgs()[1];
-        if (parameter != null) {
-            // 获取所有的属性
-            List<Field> fields = FieldUtils.getAllFieldsList(parameter.getClass());
-            for (Field field : fields) {
-                if ("operationId".equals(field.getName())) {
-                    field.setAccessible(true);
-                    field.set(parameter, userId);
-                    log.debug("auto set field:{} value:{}", field.getName(), field.get(parameter));
+        SqlCommandType  sqlCommandType  = mappedStatement.getSqlCommandType();
+        // 删除的时候不需要
+        if (!sqlCommandType.equals(SqlCommandType.DELETE)) {
+            Long userId = getLoginUserId();
+            // 获取参数
+            Object parameter = invocation.getArgs()[1];
+            if (parameter != null) {
+                // 获取所有的属性
+                List<Field> fields = FieldUtils.getAllFieldsList(parameter.getClass());
+                for (Field field : fields) {
+                    if ("operationId".equals(field.getName())) {
+                        field.setAccessible(true);
+                        field.set(parameter, userId);
+                        log.debug("auto set field:{} value:{}", field.getName(), field.get(parameter));
+                    }
                 }
             }
         }
