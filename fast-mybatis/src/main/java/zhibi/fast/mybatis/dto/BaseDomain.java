@@ -24,15 +24,15 @@ public abstract class BaseDomain extends BasePage implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @KeySql(useGeneratedKeys = true)
-    private Long id;
+    private Long    id;
     /**
      * 操作人
      */
-    private Long operationId;
+    private Long    operationId;
     @AutoTime(insert = true, update = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createTime;
+    private Date    createTime;
     @AutoTime(insert = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updateTime;
+    private Date    updateTime;
 }
