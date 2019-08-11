@@ -2,6 +2,7 @@ package zhibi.fast.poi.excel.read.utils;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DateUtil;
 
 /**
  * 读取Excel的val值
@@ -22,8 +23,14 @@ public class ExcelValueUtils {
             return "";
         }
         CellType cellType = cell.getCellType();
+
+
         switch (cellType) {
             case NUMERIC:
+                // 时间处理
+                if (DateUtil.isCellDateFormatted(cell)) {
+                    return cell.getDateCellValue();
+                }
                 return cell.getNumericCellValue();
             case STRING:
                 return cell.getStringCellValue();
