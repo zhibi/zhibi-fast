@@ -4,6 +4,8 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 
+import java.util.TimeZone;
+
 /**
  * 读取Excel的val值
  *
@@ -29,6 +31,8 @@ public class ExcelValueUtils {
             case NUMERIC:
                 // 时间处理
                 if (DateUtil.isCellDateFormatted(cell)) {
+                    TimeZone tz = TimeZone.getTimeZone("ETC/GMT-8");
+                    TimeZone.setDefault(tz);
                     return cell.getDateCellValue();
                 }
                 return cell.getNumericCellValue();
