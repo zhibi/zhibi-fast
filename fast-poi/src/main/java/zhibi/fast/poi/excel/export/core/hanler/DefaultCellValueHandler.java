@@ -1,9 +1,12 @@
 package zhibi.fast.poi.excel.export.core.hanler;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.poi.ss.usermodel.*;
+import zhibi.fast.commons.base.RemarkEnum;
 import zhibi.fast.poi.excel.export.core.ImageFileLoader;
 import zhibi.fast.poi.excel.export.core.serializable.CellValueSerializable;
+import zhibi.fast.poi.excel.export.core.serializable.EnumCellValueSerial;
 import zhibi.fast.poi.excel.export.core.serializable.NullCellValueSerial;
 import zhibi.fast.poi.excel.export.entity.ExportCell;
 import zhibi.fast.poi.excel.export.enums.ExcelValueTypeEnum;
@@ -35,9 +38,19 @@ public class DefaultCellValueHandler implements CellValueHandler {
                 if (null == value) {
                     serial = NullCellValueSerial.class.newInstance().serial(null);
                 } else if (value.getClass().equals(Date.class)) {
-                    serial = DateFormatUtils.format((Date) value, exportCell.getPattern());
+                    String pattern = exportCell.getPattern();
+                    if (StringUtils.isBlank(pattern)) {
+                        pattern = "yyyy-MM-dd HH:mm:ss";
+                    }
+                    serial = DateFormatUtils.format((Date) value, pattern);
                 } else if (value.getClass().equals(LocalDateTime.class)) {
-                    serial = ((LocalDateTime) value).format(DateTimeFormatter.ofPattern(exportCell.getPattern()));
+                    String pattern = exportCell.getPattern();
+                    if (StringUtils.isBlank(pattern)) {
+                        pattern = "yyyy-MM-dd HH:mm:ss";
+                    }
+                    serial = ((LocalDateTime) value).format(DateTimeFormatter.ofPattern(pattern));
+                } else if (value instanceof RemarkEnum) {
+                    serial = EnumCellValueSerial.class.newInstance().serial(value);
                 } else {
                     serial = String.valueOf(value);
                 }
