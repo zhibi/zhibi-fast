@@ -72,12 +72,15 @@ public class UpdateOperationInterceptor implements Interceptor {
      * @return
      */
     private Long getLoginUserId() {
-        Object loginUser = session.getAttribute(Constants.Session.LOGIN_USER);
-        if (loginUser == null) {
-            loginUser = session.getAttribute(Constants.Session.LOGIN_ADMIN);
-        }
-        if (loginUser instanceof BaseDomain) {
-            return ((BaseDomain) loginUser).getId();
+        try {
+            Object loginUser = session.getAttribute(Constants.Session.LOGIN_USER);
+            if (loginUser == null) {
+                loginUser = session.getAttribute(Constants.Session.LOGIN_ADMIN);
+            }
+            if (loginUser instanceof BaseDomain) {
+                return ((BaseDomain) loginUser).getId();
+            }
+        } catch (Exception ignore) {
         }
         return -1L;
     }
