@@ -74,6 +74,11 @@ public interface Constants {
          * 验证码
          */
         String VERIFY_CODE = "sessionVerifyCode";
+
+        /**
+         * 登录的用户ID
+         */
+        String LOGIN_USER_ID = "sessionUserID";
     }
 
     /**

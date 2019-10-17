@@ -124,4 +124,27 @@ public abstract class BaseController {
         return "redirect:" + request.getHeader("Referer");
     }
 
+    /**
+     * 获取登录的用户ID
+     *
+     * @return
+     */
+    protected Long loginUserId() {
+        Object userId = session.getAttribute(Constants.Session.LOGIN_USER_ID);
+        try {
+            return Long.parseLong(userId.toString());
+        } catch (Exception e) {
+            return 0L;
+        }
+    }
+
+    /**
+     * 获取登录的用户ID
+     *
+     * @return
+     */
+    protected void loginUserId(Long userId) {
+        session.setAttribute(Constants.Session.LOGIN_USER_ID, userId);
+    }
+
 }
